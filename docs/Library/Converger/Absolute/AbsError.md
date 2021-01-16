@@ -1,0 +1,3 @@
+# AbsError
+
+Absolute Error

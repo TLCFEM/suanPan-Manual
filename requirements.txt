@@ -1,0 +1,6 @@
+mdx_truly_sane_lists
+mkdocs-awesome-pages-plugin
+mkdocs-material
+mkdocs-with-pdf
+pymdown-extensions
+recommonmark

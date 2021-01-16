@@ -1,0 +1,37 @@
+site_name: suanPan manual
+site_author: Theodore Chang
+copyright: Copyright © 2017-2021 Theodore Chang
+repo_url: "https://github.com/TLCFEM/suanPan-manual"
+theme:
+  name: material
+  features:
+    - navigation.tabs
+  favicon: suanPan.svg
+  logo: suanPan.svg
+  palette:
+    primary: blue grey
+    accent: pink
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences
+  - smarty
+  - toc:
+      permalink: true
+  - mdx_truly_sane_lists
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+plugins:
+  # - with-pdf:
+  #     cover_subtitle: An Open Source, Parallel and Heterogeneous Finite Element Analysis Framework
+  #     ordered_chapter_level: 3
+  #     output_path: pdf/suanPan-manual.pdf
+  - search
+  - awesome-pages
+# extra_css:
+#   - javascripts/dark_theme.css
+#   - javascripts/codehilite.css
