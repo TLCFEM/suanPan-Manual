@@ -4,8 +4,8 @@
 
 1. To configure the source code, [CMake](https://cmake.org/download/) shall be available. Please download and install it before configuring the source code package.
 2. The linear algebra driver used is [OpenBLAS](https://github.com/xianyi/OpenBLAS). You may want to compile it with the optimal configuration based on the specific machine.
-3. It is strongly recommended to install [oneMKL](https://github.com/oneapi-src/oneMKL) and [oneTBB](https://github.com/oneapi-src/oneTBB) for better performance. [oneAPI](https://github.com/oneapi-src) is free to use!
-4. Please be aware that MKL is throttled on AMD platforms. Performance comparisons can be seen for example [here](https://github.com/flame/blis/blob/master/docs/Performance.md). If you have AMD CPUs please check which linear algebra library is more suitable.
+3. It is strongly recommended to install Intel MKL for potentially better performance.
+4. Please be aware that MKL is throttled on AMD platforms. Performance comparisons can be seen for example [here](https://github.com/flame/blis/blob/master/docs/Performance.md). If you have AMD CPUs please collect more knowledge to determine which linear algebra library is more suitable.
 
 ## Toolset
 
@@ -13,7 +13,7 @@ A number of new features from new standards are utilized. To compile the binary,
 
 GCC, MSVC and Intel compilers are tested with the source code. Clang is not tested and thus not recommended.
 
-On Windows, Visual Studio 2019 with oneAPI is recommended. Alternatively, [WinLibs](http://winlibs.com/) can be used if GCC compilers are preferred.
+On Windows, Visual Studio 2019 with Intel Parallel Studio is recommended. Alternatively, [WinLibs](http://winlibs.com/) can be used if GCC compilers are preferred.
 
 On other platforms (Linux and MacOS), simply use GCC (at least version 9.3.0) which comes with a valid Fortran compiler.
 
@@ -30,7 +30,7 @@ A solution file is provided under `MSVC/suanPan` folder. There are two configura
 1. `Debug`: Assume no available Fortran compiler, all Fortran related libraries are provided as precompiled DLLs. Use OpenBLAS for linear algebra. Multithreading disabled. Visualisation disabled. HDF5 support disabled.
 2. `Release`: Fortran libraries are configured with Intel compilers. Use MKL for linear algebra. Multithreading enabled. Visualisation enabled with VTK version 9.0. HDF5 support enabled. CUDA enabled.
 
-If oneAPI toolkit is not installed, only the `Debug` configuration can be successfully compiled. Simply open the solution, ignore all potential warnings and build the solution.
+If Intel oneAPI Toolkit and CUDA are not installed, only the `Debug` configuration can be successfully compiled. Simply open the solution, ignore all potential warnings and build the solution.
 
 To compile `Release` version, please
 
@@ -116,21 +116,30 @@ The following guide is based on Ubuntu.
 
 #### Install MKL
 
-The following guide is a manual installation is based on Ubuntu command line. Alternatively, the official guide can be referred to for other installation methods. Intel oneAPI Toolkit can now be installed from repositories.
+**Please note the following steps are based on Intel MKL library (standalone version) rather than oneAPI toolkit. The oneAPI changes the names of some libraries which will potentially be fixed in future.**
+
+The following guide is a manual installation is based on Ubuntu command line.
 
 1. Download MKL package. The link may differ from the given one for different versions. Please find the correct one first.
 
     ```bash
-    wget https://registrationcenter-download.intel.com/akdlm/irc_nas/17402/l_onemkl_p_2021.1.1.52_offline.sh
+    wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/16533/l_mkl_2020.1.217.tgz
     ```
 
-2. Install to default location.
+2. Unpack.
 
     ```bash
-    sh ./l_onemkl_p_2021.1.1.52_offline.sh -s -a --silent --eula accept
+    tar -xzf l_mkl_2020.1.217.tgz && cd l_mkl_2020.1.217
     ```
 
-3. Now compile `suanPan` by enabling MKL via option `-DUSE_MKL=ON`. The corresponding `MKLROOT` shall be assigned, for example `-DMKLROOT=/opt/intel/oneapi/mkl/latest/`, depending on the installation location.
+3. Modify installation configurations and install.
+
+    ```bash
+    sed -i 's/decline/accept/g' ./silent.cfg
+    ./install.sh --silent ./silent.cfg
+    ```
+
+4. Now compile `suanPan` by enabling MKL via option `-DUSE_MKL=ON`. The corresponding `MKLROOT` shall be assigned, for example `-DMKLROOT=/opt/intel/compilers_and_libraries/linux`, depending on the installation location.
 
 ### Example Configuration
 
@@ -139,5 +148,5 @@ The following command is used to compile the program to be distributed via snap.
 ```bash
 # assume current folder is suanPan/build
 # the parent folder contains source code
-cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_MULTITHREAD=ON -DUSE_HDF5=ON -DUSE_EXTERNAL_VTK=ON -DUSE_MKL=ON -DMKLROOT=/opt/intel/oneapi/mkl/latest/ ..
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_MULTITHREAD=ON -DUSE_HDF5=ON -DUSE_EXTERNAL_VTK=ON -DUSE_MKL=ON -DMKLROOT=/opt/intel/compilers_and_libraries/linux ..
 ```
