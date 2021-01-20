@@ -59,12 +59,6 @@ set symm_mat false
 set band_mat false
 ```
 
-Use the following command to enable `CUDA` sparse solver for `CUDA` enabled version.
-
-```
-set system_solver CUDA
-```
-
 ### Full Packed Storage
 
 If the matrix is symmetric, a so called pack format can be used to store the matrix. Essentially, only the upper or the lower triangle of the matrix is stored. The spatial cost is half of that of the full storage, but the solving speed is no better. The `_spsv()` subroutine is used for matrix solving.
@@ -82,13 +76,16 @@ The sparse matrix is also supported. The following command will ignore any previ
 set sparse_mat true
 ```
 
-Use the following command to switch among solvers.
+Use the following command to switch among available solvers for sparse matrices.
 
 ```
 set system_solver SuperLU
 set system_solver MUMPS
-set system_solver CUDA
+set system_solver CUDA ! only available when CUDA is enabled
+set system_solver PARDISO ! only available when MKL is enabled
 ```
+
+For executable that is compiled without `CUDA` and `MKL`, `SuperLU` will be used as default solver when unsupported solver types are assigned.
 
 ## System Solver
 
@@ -99,7 +96,7 @@ set system_solver (1)
 # (1) string, system solver name 
 ```
 
-For sparse storage, three solvers are available as presented above: `CUDA`, `SuperLU` and `MUMPS`. The solving speed of both `SuperLU` and `MUMPS` is slow compared to that of dense solvers. Multithreaded versions do not always result in faster solving. Factors such as problem size, computation platform, overhead, etc. all may slow down the procedure.
+For sparse storage, four solvers are available as presented above: `PARDISO`, `CUDA`, `SuperLU` and `MUMPS`. Multithreaded versions do not always result in faster solving. Factors such as problem size, computation platform, overhead, etc. all may slow down the procedure. Thus users may want to experiment to determine whether it is appropriate to use sparse systems.
 
 The following command can be used to control if to use mixed precision refinement. This command has no effect if the target matrix storage scheme has no mixed precision implementation.
 
