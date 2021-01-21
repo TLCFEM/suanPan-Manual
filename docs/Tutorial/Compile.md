@@ -89,7 +89,7 @@ The following guide is based on Ubuntu.
 1. Install OpenGL first, as well as compilers if necessary.
 
     ```bash
-    sudo apt-get install gcc g++ gfortran libglu1-mesa-dev freeglut3-dev mesa-common-dev
+    sudo apt install gcc g++ gfortran libglu1-mesa-dev freeglut3-dev mesa-common-dev
     ```
 
 2. Obtain VTK source code and unpack.
@@ -105,10 +105,10 @@ The following guide is based on Ubuntu.
     mkdir VTK-build && cd VTK-build
     ```
 
-4. Configure and compile VTK library. If necessary, installation destination can be modified.
+4. Configure and compile VTK library. If necessary, installation destination can be modified. It is recommended to build shared libraries.
 
     ```bash
-    cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF ../VTK-9.0.0
+    cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON ../VTK-9.0.0
     sudo make install -j4
     ```
 
