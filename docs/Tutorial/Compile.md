@@ -116,7 +116,7 @@ The following guide is based on Ubuntu.
 
 #### Install MKL
 
-**Please note the following steps are based on Intel MKL library (standalone version) rather than oneAPI toolkit. The oneAPI changes the names of some libraries which will potentially be fixed in future.**
+The provided CMake configuration covers both `oneMKL 2021` and `Intel MKL 2020`. Please note MKL is included in oneAPI toolkit starting from 2021, which has a different folder structure compared to Intel Parallel Studio.
 
 The following guide is a manual installation is based on Ubuntu command line.
 
@@ -139,7 +139,7 @@ The following guide is a manual installation is based on Ubuntu command line.
     ./install.sh --silent ./silent.cfg
     ```
 
-4. Now compile `suanPan` by enabling MKL via option `-DUSE_MKL=ON`. The corresponding `MKLROOT` shall be assigned, for example `-DMKLROOT=/opt/intel/compilers_and_libraries/linux`, depending on the installation location.
+4. Now compile `suanPan` by enabling MKL via option `-DUSE_MKL=ON`. The corresponding `MKLROOT` shall be assigned, for example `-DMKLROOT=/opt/intel/compilers_and_libraries/linux/mkl`, depending on the installation location.
 
 ### Example Configuration
 
@@ -148,5 +148,5 @@ The following command is used to compile the program to be distributed via snap.
 ```bash
 # assume current folder is suanPan/build
 # the parent folder contains source code
-cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_MULTITHREAD=ON -DUSE_HDF5=ON -DUSE_EXTERNAL_VTK=ON -DUSE_MKL=ON -DMKLROOT=/opt/intel/compilers_and_libraries/linux ..
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_MULTITHREAD=ON -DUSE_HDF5=ON -DUSE_EXTERNAL_VTK=ON -DUSE_MKL=ON -DMKLROOT=/opt/intel/compilers_and_libraries/linux/mkl ..
 ```
