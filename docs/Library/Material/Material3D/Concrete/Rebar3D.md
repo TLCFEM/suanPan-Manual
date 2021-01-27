@@ -1,6 +1,6 @@
 # Rebar3D
 
-Orthotropic Model
+Orthotropic Material
 
 ## Syntax
 
@@ -14,3 +14,5 @@ material Rebar3D (1) (2) (3) (4) (5) (6) (7)
 # (6) double, y direction reinforcement ratio
 # (7) double, z direction reinforcement ratio
 ```
+
+The uniform reinforcement is defined along global axes. To have arbitrarily aligned layout, users can wrap it into a [`Rotation3D`](../../Wrapper/Rotation3D.md) wrapper.

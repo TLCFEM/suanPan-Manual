@@ -310,6 +310,8 @@
     * [Parallel](Library/Material/Wrapper/Parallel.md)
     * [PlaneStrain](Library/Material/Wrapper/PlaneStrain.md)
     * [PlaneStress](Library/Material/Wrapper/PlaneStress.md)
+    * [Rotation2D](Library/Material/Wrapper/Rotation2D.md)
+    * [Rotation3D](Library/Material/Wrapper/Rotation3D.md)
     * [Sequential](Library/Material/Wrapper/Sequential.md)
     * [Stacked](Library/Material/Wrapper/Stacked.md)
     * [Uniaxial](Library/Material/Wrapper/Uniaxial.md)
