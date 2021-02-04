@@ -6,6 +6,7 @@
 2. The linear algebra driver used is [OpenBLAS](https://github.com/xianyi/OpenBLAS). You may want to compile it with the optimal configuration based on the specific machine.
 3. It is strongly recommended to install Intel MKL for potentially better performance.
 4. Please be aware that MKL is throttled on AMD platforms. Performance comparisons can be seen for example [here](https://github.com/flame/blis/blob/master/docs/Performance.md). If you have AMD CPUs please collect more knowledge to determine which linear algebra library is more suitable.
+5. The `MUMPS` library may fail to compile on the first run due to dependency between modules. Build one more time to resolve the dependency problem.
 
 ## Toolset
 
