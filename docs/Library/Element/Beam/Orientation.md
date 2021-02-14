@@ -2,7 +2,7 @@
 
 An `orientation` is required for 3D beam elements to indicate how the section is oriented. The `orientation` object also handles transformation between global and local coordinate systems of beam/truss elements.
 
-For 2D beam elements, the local $z$-axis is defined to be the global $z$-axis.
+For 2D beam elements, the local $$z$$-axis is defined to be the global $$z$$-axis.
 
 ## Syntax
 
