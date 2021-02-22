@@ -5,6 +5,7 @@ Linear Cube/Brick with Incompatible Modes
 * Number of Nodes: 8
 * Number of DoFs: 3
 * Supports Body Force
+* Integration Scheme: Irons Six-Point
 * Constant Consistent Mass Matrix With Same Order Integration
 
 ## Syntax

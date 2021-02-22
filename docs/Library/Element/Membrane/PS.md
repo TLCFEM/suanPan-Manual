@@ -5,6 +5,7 @@ Pian-Sumihara Quadrilateral Element
 * Number of Nodes: 4
 * Number of DoFs: 2
 * Supports Body Force
+* Integration Scheme: 2nd Order Gauss
 * Constant Consistent Mass Matrix With Same Order Integration
 
 ## Reference

@@ -10,7 +10,8 @@ Mixed Quadrilateral With Drilling DoFs
 ## References
 
 1. [10.1002/nme.6066](https://doi.org/10.1002/nme.6066)
-2. [10.1016/j.engstruct.2020.110760](https://doi.org/10.1016/j.engstruct.2020.110760)
+2. [10.1016/j.engstruct.2019.109592](https://doi.org/10.1016/j.engstruct.2019.109592)
+3. [10.1016/j.engstruct.2020.110760](https://doi.org/10.1016/j.engstruct.2020.110760)
 
 ## Syntax
 
@@ -62,4 +63,7 @@ element SGCMQG (1) (2...5) (6) [7] [8]
 ## Remarks
 
 * Three integration schemes are available: "I", "L" and "G".
+  * "I": Five-Point Irons Scheme
+  * "L": 3rd Order Lobatto Scheme
+  * "G": 3rd Order Gauss Scheme
 * `GCMQ` is the full version described in [1] with enhanced strain, `SGCMQ` is a `PS` like element with no enhanced strain, the direct result of which is less computation is required (less than `CP8R`).
