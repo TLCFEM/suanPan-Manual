@@ -10,7 +10,7 @@ In order to enable `VTK`, `CUDA` and `MKL`, the program shall be compiled locall
 
 ## Execute Program
 
-By default, the `AVX` support is turned on to utilize CPU capability. For CPUs that do not support `AVX`, the application **cannot** be successfully executed. Users can either compile the program by themselves or request a specific version by file an issue. Processors that do not support `AVX` may be too old to perform HPC based simulations.
+By default, the `AVX` support is turned on to utilize CPU capability. For CPUs that do not support `AVX`, the application **cannot** be successfully executed. Users can either compile the program by themselves or request a specific version by filing an issue. Processors that do not support `AVX` may be too old to perform HPC based simulations.
 
 The parallelization is enabled mostly by the `TBB` library. If the program is compiled with **SUANPAN_MT** macro, parallelization is used by default. The **OpenMP** is enabled in several parts of the program, users can set environment variable **OMP_NUM_THREADS** to enable some **OpenMP** based parallelization. To do so, users can, for example in Windows, use the following command.
 
@@ -18,7 +18,7 @@ The parallelization is enabled mostly by the `TBB` library. If the program is co
 set OMP_NUM_THREADS=6
 ```
 
-On Linux, the dynamic loading path need to be set so that dynamic libraries such as `libtbb.so` can be successfully found.
+On Linux, the dynamic loading path need to be set so that dynamic libraries such as `libtbb.so` can be successfully found. If the software is installed via snap, it is automatically done. Alternatively, users can execute the program via the provided `suanPan.sh` script.
 
 ```bash
 # current path contains suanPan
