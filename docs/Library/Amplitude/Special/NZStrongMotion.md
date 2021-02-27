@@ -30,11 +30,11 @@ The format of original file can be seen [here](https://www.geonet.org.nz/data/su
 
 The processed archive first extract accelerogram name from the file, then read how many acceleration values shall be read and the interval between two records, then read all values and scale them by multiplying each by $$1000$$ and store them into an integer array. The array has the following layout.
 
-| index |         value ($$\times1000$$)          |
-| :---: | :-------------------------------------: |
-|   0   | time interval of the record in seconds  |
-|   1   |   absolute maximum acceleration value   |
-|   2   | acceleration value at first time point  |
-|   3   | acceleration value at second time point |
-|   4   | acceleration value at third time point  |
-|   5   |                   ...                   |
+| index | value ($$\times1000$$)                  |
+|:-----:|:---------------------------------------:|
+| 0     | time interval of the record in seconds  |
+| 1     | absolute maximum acceleration value     |
+| 2     | acceleration value at first time point  |
+| 3     | acceleration value at second time point |
+| 4     | acceleration value at third time point  |
+| 5     | ...                                     |
