@@ -44,7 +44,7 @@ $$
 \sum{}a_nx^n=0,
 $$
 
-where $$x$$ is the coordinate of the target DoF of the target point.
+where $$x$$ is the coordinate of the target DoF of the target node.
 
 For example, if one wants to select all nodes on line $$y=200$$, then the following command can be defined.
 
@@ -96,7 +96,7 @@ Then
 generatebyplane nodegroup 1 3. 2. -1. 7.
 ```
 
-finds all nodes that falls in this plane and group them.
+finds all nodes that fall in this plane and groups them.
 
 There is no restriction on the number of coordinates used. So it is possible to define a hyper-plane, or a line. However, the last parameter will always be the constant. For example, the following command defines the line $$x+2y-3=0$$ in the 2D plane.
 

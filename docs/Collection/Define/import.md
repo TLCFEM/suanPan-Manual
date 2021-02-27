@@ -21,4 +21,4 @@ The program will look up build-in element library to see if `ElementExample` exi
 
 If the external library contains more than one function, to use other functions, users need to **explicitly** import the library.
 
-For CPP implementation, a smart pointer, for example `unique_ptr<Element>`, is passed from DLL to main executable. It is crucial to ensure both `.dll` and `.exe` are compiled with the same configuration. Otherwise unexpected errors may occur.
+For CPP implementation, a smart pointer, for example `unique_ptr<Element>`, is passed from DLL to main executable. It is crucial to ensure both `.dll` and `.exe` are compiled with the same configuration. Otherwise unexpected errors may occur. If possible, always try a C type interface implementation.
