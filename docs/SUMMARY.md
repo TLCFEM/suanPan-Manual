@@ -100,6 +100,7 @@
   * [MPC](Library/Constraint/MPC.md)
   * [ParticleCollision](Library/Constraint/ParticleCollision.md)
   * [RigidWall](Library/Constraint/RigidWall.md)
+  * [FixedLength](Library/Constraint/FixedLength.md)
 * Converger
   * [Converger](Library/Converger/Converger.md)
   * Absolute
