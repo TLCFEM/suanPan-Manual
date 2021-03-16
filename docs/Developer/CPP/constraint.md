@@ -17,8 +17,7 @@ The easiest approach to implement the constraint with penalty method is to treat
 In the most general form, a minimisation problem of function $$f(x)$$ subjected to equality constraint $$g(x)$$ can be expressed as
 
 $$
-\text{minimise}~f(x)\\
-\text{subjected to}~g(x)=0.
+\text{minimise}~f(x)~\text{subjected to}~g(x)=0.
 $$
 
 It can be converted to the Lagrangian function so that the target is to find the stationary points of

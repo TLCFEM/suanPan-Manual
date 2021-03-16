@@ -220,6 +220,7 @@
       * [BilinearElastic1D](Library/Material/Material1D/Elastic/BilinearElastic1D.md)
       * [Elastic1D](Library/Material/Material1D/Elastic/Elastic1D.md)
       * [MultilinearElastic1D](Library/Material/Material1D/Elastic/MultilinearElastic1D.md)
+      * [NLE1D01](Library/Material/Material1D/Elastic/NLE1D01.md)
     * Hysteresis
       * [AFC](Library/Material/Material1D/Hysteresis/AFC.md)
       * [AFCN](Library/Material/Material1D/Hysteresis/AFCN.md)
