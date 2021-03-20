@@ -9,10 +9,9 @@ It shall not be used with global damping models in dynamic analaysis.
 ## Syntax
 
 ```
-fixedlength2d (1) (2) (3) (4)
-fixedlength3d (1) (2) (3) (4)
+fixedlength2d (1) (2) (3)
+fixedlength3d (1) (2) (3)
 # (1) int, unique constraint tag
-# (2) int, amplitude tag, can be zero
+# (2) int, node tag
 # (3) int, node tag
-# (4) int, node tag
 ```
