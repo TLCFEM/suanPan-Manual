@@ -17,6 +17,7 @@ To successfully run an eigen analysis, the system shall be symmetric, otherwise 
 
 1. The symmetric banded storage uses `_pbsv` solver which only accepts symmetric positive definite banded matrix. If the `Frequency` fails to compute the required eigen modes, please use other storage schemes.
 2. The computed eigenvalue is the eigenvalue of the system. In the field of structural dynamics, it is $$\omega^2$$. The (angular) frequency and period can be computed accordingly.
+3. The constrained (generalized) eigenvalue problems cannot be handled when the constraints are implemented via Lagrange multiplier method. If the system contains constraints, users shall make sure they are applied via the penalty function method.
 
 ## Example
 
