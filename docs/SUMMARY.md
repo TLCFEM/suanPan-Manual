@@ -30,6 +30,7 @@
     * [dynamic analysis of a portal frame](Example/Structural/Dynamics/dynamic-analysis-of-a-portal-frame.md)
     * [particle collision](Example/Structural/Dynamics/particle-collision.md)
     * [response history analysis of an elastic coupled wall](Example/Structural/Dynamics/response-history-analysis-of-an-elastic-coupled-wall.md)
+    * [multi-support excitation](Example/Structural/Dynamics/multi-support-excitation.md)
     * [triple pendulum](Example/Structural/Dynamics/triple-pendulum.md)
   * Hybrid
     * [vibration of a displaced beam](Example/Structural/Hybrid/vibration-of-a-displaced-beam.md)
