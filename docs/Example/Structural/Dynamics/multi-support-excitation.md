@@ -35,6 +35,7 @@ The analysis setting consists of a dynamic step with [`Newmark`](../../../Librar
 
 ```
 # setting.sp
+
 step dynamic 1 30
 set ini_step_size 1E-2
 set fixed_step_size true
@@ -59,6 +60,7 @@ file geometry.sp
 
 fix 1 P 1
 
+# on DoF 1 node 2
 acceleration 2 1 -.2 1 2
 
 file setting.sp
@@ -76,6 +78,7 @@ file geometry.sp
 fix 1 2 1
 fix 2 3 1
 
+# on DoF 1 node 1
 supportacceleration 2 1 .2 1 1
 
 file setting.sp
