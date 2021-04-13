@@ -19,6 +19,25 @@ To successfully run an eigen analysis, the system shall be symmetric, otherwise 
 2. The computed eigenvalue is the eigenvalue of the system. In the field of structural dynamics, it is $$\omega^2$$. The (angular) frequency and period can be computed accordingly.
 3. The constrained (generalized) eigenvalue problems cannot be handled when the constraints are implemented via Lagrange multiplier method. If the system contains constraints, users shall make sure they are applied via the penalty function method.
 
+## FEAST Solver
+
+By default, the `ARPACK` solver is used to solve the generalized eigen problem.
+
+The [FEAST Eigenvalue Solver](http://www.ecs.umass.edu/~polizzi/feast/) can also be used. To switch, one can use
+
+```
+solver FEAST (1) (2) (3)
+# (1) int, unique solver tag
+# (2) int, number of eigen modes
+# (3) double, radius
+```
+
+Currently the `FEAST` solver can be applied to full, banded and sparse storage. For banded storage, it is necessary to use the `SPIKE` solver.
+
+```
+set system_solver SPIKE
+```
+
 ## Example
 
 Consider a massless elastic cantilever beam with lumped end mass. Assume the length is $$L=2.84$$, the elastic modulus is $$E=94.13$$, the moment of inertia is $$I=1.34$$ and the lumped mass is $$M=5.76$$ so that
