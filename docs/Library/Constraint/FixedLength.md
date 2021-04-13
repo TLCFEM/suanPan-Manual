@@ -1,10 +1,10 @@
 # FixedLength
 
-The Lagrange multiplier method can be used to define constraints. Extra storage is required for the so called auxiliary bordered stiffness matrix. The constraint is satisfied exactly.
+The Lagrange multiplier method can be used to define constraints. Extra storage is required for the so called auxiliary border stiffness matrix. The constraint is satisfied exactly.
 
-The `FixedLength2D` and `FixedLength3D` constraints behave similar to the `Tie` element, the nonlinear constraint is implemented via Lagrange multiplier.
+The `FixedLength2D` and `FixedLength3D` constraints behave similar to the `Tie` element, the nonlinear constraint is implemented via Lagrange multiplier method.
 
-It shall not be used with global damping models in dynamic analaysis.
+It shall not be used with global damping models in dynamic analysis.
 
 ## Syntax
 

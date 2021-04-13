@@ -2,7 +2,7 @@
 
 The **original** NZ strong motion database can be downloaded from this [page](https://www.geonet.org.nz/data/supplementary/nzsmdb).
 
-The **accelerograms** are processed and compiled into binary files. Please [downloaded](NZStrongMotion.7z) the archive first between using any recordings. Users may need [7-Zip](https://www.7-zip.org/download.html) to unpack the archive.
+The **accelerograms** are **processed** and **compiled** into binary files. Please [download](NZStrongMotion.7z) the archive first before using any recordings. Users may need [7-Zip](https://www.7-zip.org/download.html) to unpack the archive.
 
 ## Syntax
 

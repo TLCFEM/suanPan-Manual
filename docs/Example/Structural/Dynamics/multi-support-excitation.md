@@ -8,6 +8,8 @@ The multiple support excitation refers to different prescribed motions at variou
 
 The implementation in `suanPan` converts whatever support excitations applied to prescribed displacements and the displacement controlled algorithm [`MPDC`](../../../Library/Solver/MPDC.md) is automatically enabled to solve the system.
 
+Thus, support excitations in forms of displacement, velocity and acceleration are supported.
+
 ## A Simple Model
 
 Here we first create a simple cantilever beam with additional point mass at the free end. The basic geometry related commands are stored in file `geometry.sp`.
