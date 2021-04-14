@@ -1,6 +1,6 @@
 # Contact2D
 
-2D Node(Slave)-Line(Master) Contact
+2D Node(Slave)-Line(Master) Contact Element
 
 ## Syntax
 
@@ -21,5 +21,3 @@ element Contact2D (1) (2) (3) [4]
 3. Master nodes can penetrate lines formed in slave group. To prevent this, define a new `Contact2D` element by swapping the order of slave and master groups.
 
 4. Example usage can be seen in the [example](../../../Example/Structural/Contact/contact-between-beam-and-block.md).
-
-5. 
