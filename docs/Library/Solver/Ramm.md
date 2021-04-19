@@ -17,4 +17,4 @@ solver Ramm (1) [2] [3]
 
 1. A proper arc length shall be manually input to achieve an efficient analysis.
 2. Often the arc length is allowed to change depending on the smoothness of the turning point. It is not recommended to fix arc length.
-3. The sparse solver supported for the moment is MUMPS only. SuperLU has no option to compute the determinant.
+3. The computation of determinant is involved. A proper matrix storage scheme shall be activated. For dense matrix storage, please use asymmetric schemes by `set symm_mat false`. For sparse solvers, please use `MUMPS` only.

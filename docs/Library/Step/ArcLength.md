@@ -12,4 +12,4 @@ step ArcLength (1) (2) (3) (4)
 
 ## Remarks
 
-1. A [`Ramm`](../Solver/Ramm.md) solver with default parameters is automatically enabled if no valid `Ramm` solver is defined.
+1. A [`Ramm`](../Solver/Ramm.md) solver with default parameters is automatically enabled if no valid `Ramm` solver is defined. Not all storage schemes are supported, please check `Ramm` documentation.
