@@ -87,6 +87,14 @@ All available settings are summarised in the following table.
 |               |                       |                      | `CUDA`        | yes             | `cusolverSpD(S)csrlsvqr`       |
 |               |                       |                      | `PARDISO`     | no              |                                |
 
+Some empirical guidance can be concluded as follows.
+
+1. There is no significant difference between full precision and mixed precision algorithm in terms of speed when `MUMPS` solver is used.
+2. For most cases, the asymmetric banded storage with full precision solver is the most general option.
+3. The mixed precision algorithm often gives the most significant performance boost for full storage with `CUDA` solver.
+4. The `SPIKE` solver is slightly slower than conventional `LAPACK` implementations.
+5. The `SuperLU` solver is slower than the `MUMPS` solver. The multithreaded `SuperLU` performs LU factorization in parallel but forward/back substitution in sequence.
+
 ## Parallel Matrix Assembling
 
 For dense matrix storage schemes, the global matrix is stored in a consecutive chunk of memory. Assembling global matrix needs to fill in the corresponding memory location with potentially several values contributed by different elements. Often in-place atomic summation is involved. To assign each memory location a mutex lock is not cost efficient. Instead, a $$k$$-coloring concept can be adopted to divide the whole model into several groups. Each group contains elements that do not shared common nodes with others in the same group. By such, no atomic operations are required. Elements in the same group can be updated simultaneously so the matrix assembling is lock free.
