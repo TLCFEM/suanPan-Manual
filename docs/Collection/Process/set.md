@@ -83,17 +83,16 @@ All available settings are summarised in the following table.
 |               |                       |                      | `SPIKE`       | yes             | `d(s)spike_gbsv`               |
 | symm. packed  | `set symm_mat true`   | `set band_mat false` | `LAPACK`      | yes             | `d(s)ppsv`                     |
 | sparse        | `set sparse_mat true` |                      | `SuperLU`     | yes             | `d(s)gssv`                     |
-|               |                       |                      | `MUMPS`       | yes             |                                |
 |               |                       |                      | `CUDA`        | yes             | `cusolverSpD(S)csrlsvqr`       |
+|               |                       |                      | `MUMPS`       | no              |                                |
 |               |                       |                      | `PARDISO`     | no              |                                |
 
 Some empirical guidance can be concluded as follows.
 
-1. There is no significant difference between full precision and mixed precision algorithm in terms of speed when `MUMPS` solver is used.
-2. For most cases, the asymmetric banded storage with full precision solver is the most general option.
-3. The mixed precision algorithm often gives the most significant performance boost for full storage with `CUDA` solver.
-4. The `SPIKE` solver is slightly slower than conventional `LAPACK` implementations.
-5. The `SuperLU` solver is slower than the `MUMPS` solver. The multithreaded `SuperLU` performs LU factorization in parallel but forward/back substitution in sequence.
+1. For most cases, the asymmetric banded storage with full precision solver is the most general option.
+2. The mixed precision algorithm often gives the most significant performance boost for full storage with `CUDA` solver.
+3. The `SPIKE` solver is slightly slower than conventional `LAPACK` implementations.
+4. The `SuperLU` solver is slower than the `MUMPS` solver. The multithreaded `SuperLU` performs LU factorization in parallel but forward/back substitution in sequence.
 
 ## Parallel Matrix Assembling
 
