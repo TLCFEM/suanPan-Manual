@@ -27,83 +27,65 @@ set min_step_size (1)
 # (1) double, target time step size
 ```
 
-## Matrix Storage Scheme
+## Solving Related Settings
 
-### Asymmetric Banded
+### Matrix Storage Scheme
 
-By default, an **asymmetric banded** matrix storage scheme is used. For 1D analysis, the global stiffness matrix is always symmetric. However, when it comes to 2D and 3D analyses, the global stiffness may be symmetric in terms of its layout, but the may not have the same value on the symmetric entries. In math language, if $$K(i,j)\neq0$$ then $$K(j,i)\neq0$$, but $$K(i,j)\neq{}K(j,i)$$. Hence an asymmetric banded storage is the safest. The `_gbsv()` LAPACK subroutine is used for matrix solving.
+#### Asymmetric Banded
 
-### Symmetric Banded
+By default, an **asymmetric banded** matrix storage scheme is used. For 1D analysis, the global stiffness matrix is always symmetric. However, when it comes to 2D and 3D analyses, the global stiffness may be structurally symmetric in terms of its layout, but the may not have the same value on the symmetric entries. In math language, if $$K(i,j)\neq0$$ then $$K(j,i)\neq0$$, but $$K(i,j)\neq{}K(j,i)$$. Hence an asymmetric banded storage is the safest. The `_gbsv()` LAPACK subroutine is used for matrix solving.
 
-To use a symmetric banded storage, the following commands can be used.
+#### Symmetric Banded
 
-```
-set symm_mat true
-set band_mat true
-```
+It shall be noted that the symmetric scheme can save almost $$50\%$$ of the memory used in the asymmetric scheme. The `_pbsv()` LAPACK subroutine is used. This subroutine can only deal with **symmetric positive definite band matrix**. For some problems, in which the matrix is not necessarily positive definite, for example the buckling problems, this subroutine fails. **Before enabling the symmetric banded storage, the analyst must check if the matrix is SPD.**
 
-The above commands enable a symmetric scheme. It shall be noted that the symmetric scheme can save almost $$50\%$$ of the memory used in the asymmetric scheme. The `_pbsv()` LAPACK subroutine is used. This subroutine can only deal with **symmetric positive definite band matrix**. For some problems, in which the matrix is not necessarily positive definite, for example the buckling problems, this subroutine fails. **Before enabling the symmetric banded storage, the analyst must check if the matrix is SPD.**
+#### Full Storage
 
-Use the following command to enable `Spike` solver.
+If the problem scale is small, it does not hurt if a full storage scheme is used. For some particular problems such as particle collision problems, the full storage scheme is the only option.
 
-```
-set system_solver Spike
-```
+#### Full Packed Storage
 
-### Full Storage
+If the matrix is symmetric, a so called pack format can be used to store the matrix. Essentially, only the upper or the lower triangle of the matrix is stored. The spatial cost is half of that of the full storage, but the solving speed is no better. The `_spsv()` subroutine is used for matrix solving. It is not recommended to use this packed scheme.
 
-If the problem scale is small, it does not hurt if a full storage scheme is used.
+#### Sparse Storage
 
-```
-set symm_mat false
-set band_mat false
-```
+The sparse matrix is also supported. Several sparse solvers are implemented.
 
-### Full Packed Storage
+### System Solver
 
-If the matrix is symmetric, a so called pack format can be used to store the matrix. Essentially, only the upper or the lower triangle of the matrix is stored. The spatial cost is half of that of the full storage, but the solving speed is no better. The `_spsv()` subroutine is used for matrix solving.
-
-```
-set symm_mat true
-set band_mat false
-```
-
-### Sparse Storage
-
-The sparse matrix is also supported. The following command will ignore any previous symmetric or banded settings and uses sparse solver to solve the matrix.
-
-```
-set sparse_mat true
-```
-
-Use the following command to switch among available solvers for sparse matrices.
-
-```
-set system_solver SuperLU
-set system_solver MUMPS
-set system_solver CUDA ! only available when CUDA is enabled
-set system_solver PARDISO ! only available when MKL is enabled
-```
-
-For executable that is compiled without `CUDA` and `MKL`, `SuperLU` will be used as default solver when unsupported solver types are assigned.
-
-## System Solver
-
-There are several different solvers implemented. It is possible to switch from one to another.
+Different solvers are implemented for different storage schemes. It is possible to switch from one to another by using the following command. Details are covered in the summary table.
 
 ```
 set system_solver (1)
 # (1) string, system solver name 
 ```
 
-For sparse storage, four solvers are available as presented above: `PARDISO`, `CUDA`, `SuperLU` and `MUMPS`. Multithreaded versions do not always result in faster solving. Factors such as problem size, computation platform, overhead, etc. all may slow down the procedure. Thus users may want to experiment to determine whether it is appropriate to use sparse systems.
+### Mixed Precision Algorithm
 
 The following command can be used to control if to use mixed precision refinement. This command has no effect if the target matrix storage scheme has no mixed precision implementation.
 
 ```
 set precision (1)
-# (1) string, "single" or "double"
+# (1) string, "single" ("mixed") or "double" ("full")
 ```
+
+### Summary
+
+All available settings are summarised in the following table.
+
+| storage       | configuration         | configuration        | system solver | mixed precision | subroutine in external library |
+| ------------- | --------------------- | -------------------- | ------------- | --------------- | ------------------------------ |
+| full          | `set symm_mat false`  | `set band_mat false` | `LAPACK`      | yes             | `d(s)gesv`                     |
+|               |                       |                      | `CUDA`        | yes             | `cusolverDnD(S)gesv`           |
+| symm. banded  | `set symm_mat true`   | `set band_mat true`  | `LAPACK`      | yes             | `d(s)pbsv`                     |
+|               |                       |                      | `SPIKE`       | yes             | `d(s)spike_gbsv`               |
+| asymm. banded | `set symm_mat false`  | `set band_mat true`  | `LAPACK`      | yes             | `d(s)gbsv`                     |
+|               |                       |                      | `SPIKE`       | yes             | `d(s)spike_gbsv`               |
+| symm. packed  | `set symm_mat true`   | `set band_mat false` | `LAPACK`      | yes             | `d(s)ppsv`                     |
+| sparse        | `set sparse_mat true` |                      | `SuperLU`     | yes             | `d(s)gssv`                     |
+|               |                       |                      | `MUMPS`       | yes             |                                |
+|               |                       |                      | `CUDA`        | yes             | `cusolverSpD(S)csrlsvqr`       |
+|               |                       |                      | `PARDISO`     | no              |                                |
 
 ## Parallel Matrix Assembling
 
