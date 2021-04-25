@@ -90,7 +90,7 @@ All available settings are summarised in the following table.
 Some empirical guidance can be concluded as follows.
 
 1. For most cases, the asymmetric banded storage with full precision solver is the most general option.
-2. The mixed precision algorithm often gives the most significant performance boost for full storage with `CUDA` solver.
+2. The mixed precision algorithm often gives the most significant performance boost for full storage with `CUDA` solver. But mixed precision algorithm does not show advantages in FEM in general.
 3. The `SPIKE` solver is slightly slower than conventional `LAPACK` implementations.
 4. The `SuperLU` solver is slower than the `MUMPS` solver. The multithreaded `SuperLU` performs LU factorization in parallel but forward/back substitution in sequence.
 
