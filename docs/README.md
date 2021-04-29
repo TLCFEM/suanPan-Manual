@@ -10,6 +10,8 @@ All third party libraries must provide a single markdown file to explain how to 
 
 I'm still working on this site from time to time. Hence it is unlikely to get a complete reference by solely checking this site.
 
+If `suanPan` has offered some convenience to your research work, please consider visit [10.5281/zenodo.1285221](https://doi.org/10.5281/zenodo.1285221) and cite any version appropriate.
+
 ## Summary
 
 Here is a complete [table of contents](SUMMARY.md).
