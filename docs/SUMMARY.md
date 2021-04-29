@@ -183,6 +183,7 @@
     * [ShellBase](Library/Element/Shell/ShellBase.md)
   * Special
     * [Contact2D](Library/Element/Special/Contact2D.md)
+    * [Contact3D](Library/Element/Special/Contact3D.md)
     * [Damper01](Library/Element/Special/Damper01.md)
     * [Damper02](Library/Element/Special/Damper02.md)
     * [Joint](Library/Element/Special/Joint.md)
