@@ -12,5 +12,6 @@ nav:
   - amplitude.md
   - bc.md
   - load.md
+  - constraint.md
   - modifier.md
   - recorder.md

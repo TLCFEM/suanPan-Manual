@@ -4,6 +4,8 @@ Currently, concentrated node based loads can be applied in terms of force, displ
 
 Given that all external forces are eventually converted to concentrated nodal forces, commands for distributed load patterns may not be available in the foreseeable future.
 
+It shall be noted all loads are processed in sequence (not in parallel). To improve performance, analysts shall use as fewer loads as possible.
+
 ## Syntax
 
 ### Nodal Load
@@ -82,4 +84,3 @@ supportacceleration (1) (2) (3) (4) (5 ...)
 4. The multi-point displacement control algorithm [`MPDC`](../../Library/Solver/MPDC.md) is automatically enabled if a `displacement` or `groupdisplacement` is used.
 5. Optionally, the displacement can be applied by using [`MPC`](../../Library/Constraint/MPC.md) constraint.
 6. The multi-point displacement control algorithm [`MPDC`](../../Library/Solver/MPDC.md) is automatically enabled if a `supportdisplacement`, `supportvelocity` and/or `supportacceleration` are used.
-7. 

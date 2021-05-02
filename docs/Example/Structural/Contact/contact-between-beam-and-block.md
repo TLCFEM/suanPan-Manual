@@ -96,3 +96,11 @@ exit
 ## Result
 
 ![result](contact-between-beam-and-block.gif)
+
+## Remarks
+
+The contact itself is implemented as an element thus the contact force cannot be directly spotted in the resistance of corresponding nodes.
+
+The master lines and slave nodes do not reply on the specific elements connected. Thus the node-line contact can be applied to any 2D problems with various element types including truss, beam, membrane, etc.
+
+To define a single contact element is not a difficult task but for large scale problems, it may be quite cumbersome as all potential contact pairs need to be defined. For better performance, it is recommended to have few master lines in each element while a couple of contact elements can be defined so that contact detection can be run in parallel.
