@@ -102,6 +102,10 @@
   * [ParticleCollision](Library/Constraint/ParticleCollision.md)
   * [RigidWall](Library/Constraint/RigidWall.md)
   * [FixedLength](Library/Constraint/FixedLength.md)
+  * [NodeLine](Library/Constraint/NodeLine.md)
+  * [NodeFacet](Library/Constraint/NodeFacet.md)
+  * [Embed2D](Library/Constraint/Embed2D.md)
+  * [Embed3D](Library/Constraint/Embed3D.md)
 * Converger
   * [Converger](Library/Converger/Converger.md)
   * Absolute
@@ -186,6 +190,7 @@
     * [Contact3D](Library/Element/Special/Contact3D.md)
     * [Damper01](Library/Element/Special/Damper01.md)
     * [Damper02](Library/Element/Special/Damper02.md)
+    * [Embedded2D](Library/Element/Special/Embedded2D.md)
     * [Joint](Library/Element/Special/Joint.md)
     * [Mass](Library/Element/Special/Mass.md)
     * [SingleSection](Library/Element/Special/SingleSection.md)
