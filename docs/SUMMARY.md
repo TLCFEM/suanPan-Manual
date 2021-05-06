@@ -191,6 +191,7 @@
     * [Damper01](Library/Element/Special/Damper01.md)
     * [Damper02](Library/Element/Special/Damper02.md)
     * [Embedded2D](Library/Element/Special/Embedded2D.md)
+    * [Embedded3D](Library/Element/Special/Embedded3D.md)
     * [Joint](Library/Element/Special/Joint.md)
     * [Mass](Library/Element/Special/Mass.md)
     * [SingleSection](Library/Element/Special/SingleSection.md)

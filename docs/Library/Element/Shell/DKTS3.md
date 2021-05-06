@@ -8,7 +8,7 @@ DKT Triangle Shell
 ## Syntax
 
 ```
-element DKT3 (1) (2...4) (5) (6) [7]
+element DKTS3 (1) (2...4) (5) (6) [7]
 # (1) int, unique element tag
 # (2...4) int, node i, j, k
 # (5) int, material tag
