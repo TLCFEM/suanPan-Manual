@@ -5,7 +5,7 @@
 ## Tutorial
 
 * [Obtain](Tutorial/Obtain.md)
-* [Quickfire](Tutorial/Quickfire.md)
+* [Analyze](Tutorial/Analyze.md)
 * [Syntax](Tutorial/Syntax.md)
 * [Structure](Tutorial/Structure.md)
 * [Compile](Tutorial/Compile.md)
@@ -38,6 +38,7 @@
     * [buckling analysis of a cantilever beam](Example/Structural/Buckling/buckling-analysis-of-a-cantilever-beam.md)
   * Contact
     * [contact between beam and block](Example/Structural/Contact/contact-between-beam-and-block.md)
+    * [contact in 3d space](Example/Structural/Contact/contact-in-3d-space.md)
   * Optimization
     * [evolutionary structural optimization](Example/Structural/Optimization/evolutionary-structural-optimization.md)
   * Isogeometric Analysis
