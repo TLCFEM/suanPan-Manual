@@ -68,7 +68,7 @@ where $$s$$ is the deviatoric stress, $$p$$ is the hydrostatic stress, $$\alpha$
 A non-associated flow rule is defined.
 
 $$
-\Delta\varepsilon^p=n+\dfrac{1}{3}DI,
+\Delta\varepsilon^p=\Delta\gamma{}\left(n+\dfrac{1}{3}DI\right),
 $$
 
 where $$n=\dfrac{s+p\alpha}{|s+p\alpha|}$$ is a unit tensor, $$I$$ is the second order unit tensor and $$D=A\left(\alpha^d-\alpha:n\right)$$ is the dilatancy parameter.
