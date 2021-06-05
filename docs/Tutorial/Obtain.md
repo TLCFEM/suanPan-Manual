@@ -168,3 +168,7 @@ chmod +x suanPan.sh
 # now invoke the program
 suanpan
 ```
+
+Check the following recording.
+
+[![asciicast](https://asciinema.org/a/418408.svg)](https://asciinema.org/a/418408)

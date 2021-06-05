@@ -83,7 +83,7 @@ The following instructions are based on Ubuntu. [CMake](https://cmake.org/) is u
 
 Check the following record.
 
-[![asciicast](https://asciinema.org/a/382311.svg)](https://asciinema.org/a/382311)
+[![asciicast](https://asciinema.org/a/418406.svg)](https://asciinema.org/a/418406)
 
 #### Install VTK
 
