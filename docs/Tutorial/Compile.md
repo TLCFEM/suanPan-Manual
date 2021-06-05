@@ -6,7 +6,6 @@
 2. The linear algebra driver used is [OpenBLAS](https://github.com/xianyi/OpenBLAS). You may want to compile it with the optimal configuration based on the specific machine.
 3. It is strongly recommended to install Intel MKL for potentially better performance.
 4. Please be aware that MKL is throttled on AMD platforms. Performance comparisons can be seen for example [here](https://github.com/flame/blis/blob/master/docs/Performance.md). If you have AMD CPUs please collect more knowledge to determine which linear algebra library is more suitable.
-5. The `MUMPS` library may fail to compile on the first run due to dependency between modules. Build one more time to resolve the dependency problem.
 
 ## Toolset
 
@@ -39,7 +38,7 @@ To compile `Release` version, please
 
 2. Make sure CUDA is installed. The environment variable `$(CUDA_PATH)` is used to locate headers.
 
-3. Make sure VTK is available. Define two environment variables `VTK_INC` and `VTK_LIB`, which point to include and library folders. On my machine, they are
+3. Make sure VTK is available. Define two environment variables `$(VTK_INC)` and `$(VTK_LIB)`, which point to include and library folders. On my machine, they are
    
    ```powershell
    VTK_INC=C:\Program Files\VTK\include\vtk-9.0
@@ -57,7 +56,7 @@ The following instructions are based on Ubuntu. [CMake](https://cmake.org/) is u
 1. Install necessary tools.
    
    ```bash
-   sudo apt install gcc g++ gfortran git cmake
+   sudo apt install gcc g++ gfortran git cmake libomp5
    ```
 
 2. Clone the project.
@@ -143,6 +142,9 @@ The following guide is a manual installation is based on Ubuntu command line.
    ```
 
 4. Now compile `suanPan` by enabling MKL via option `-DUSE_MKL=ON`. The corresponding `MKLROOT` shall be assigned, for example `-DMKLROOT=/opt/intel/compilers_and_libraries/linux/mkl`, depending on the installation location.
+
+
+It is possible to install Intel MKL library via package managers. See [this page](https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top/installation/install-using-package-managers/apt.html) for further details.
 
 ### Example Configuration
 
