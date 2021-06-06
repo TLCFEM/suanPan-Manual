@@ -9,7 +9,7 @@ terminal (1)
 
 ## Example
 
-For Windows,
+The `terminal` command may be useful to delete some generated result files.
 
 ```
 terminal mkdir result

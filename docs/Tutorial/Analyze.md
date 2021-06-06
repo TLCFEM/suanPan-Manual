@@ -1,4 +1,4 @@
-# Quickfire
+# Analyze
 
 This page aims to show an overview of how a model looks like by establishing a simple model, which is a simple elastic cantilever beam subjected to end load.
 
