@@ -80,7 +80,7 @@ The following instructions are based on Ubuntu. [CMake](https://cmake.org/) is u
    make -j4
    ```
 
-Check the following record.
+Check the following recording.
 
 [![asciicast](https://asciinema.org/a/418406.svg)](https://asciinema.org/a/418406)
 

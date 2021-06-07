@@ -8,6 +8,22 @@ The `dev` branch is built for every valid commit. Binaries on Windows, Ubuntu an
 
 In order to enable `VTK`, `CUDA` and `MKL`, the program shall be compiled locally with preinstalled external libraries.
 
+Currently, the following package managers can be used to install the program.
+
+| Platform | Package Manager                                                 | Command                                                                                     |
+| -------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Windows  | [Chocolatey](https://community.chocolatey.org/packages/suanpan) | choco install suanpan                                                                       |
+| Windows  | [scoop](https://scoop.sh/)                                      | scoop install https://raw.githubusercontent.com/TLCFEM/suanPan/dev/Enhancement/suanpan.json |
+| Linux    | [snap](https://snapcraft.io/suanpan)                            | snap install suanpan                                                                        |
+
+### Chocolatey
+
+[![asciicast](https://asciinema.org/a/418539.svg)](https://asciinema.org/a/418539)
+
+### snap
+
+[![asciicast](https://asciinema.org/a/418407.svg)](https://asciinema.org/a/418407)
+
 ## Execute Program
 
 By default, the `AVX` support is turned on to utilize CPU capability. For CPUs that do not support `AVX`, the application **cannot** be successfully executed. Users can either compile the program by themselves or request a specific version by filing an issue. Processors that do not support `AVX` may be too old to perform HPC based simulations.
@@ -121,7 +137,7 @@ A syntax file with (almost) all commands is provided as `suanPan.sublime-syntax`
 
 ### Autocomplete
 
-All keywords used are stored in the JSON file `suanPan.sublime-completions`. Place the file in folder `~/.config/sublime-text-3/Packages/User/` (Linux) or `%appdata%\Sublime Text 3\Packages\User` (Windows) and you are good to go with the previous syntax file.
+All keywords used are stored in the JSON file `suanPan.sublime-completions`. Place the file in folder `~/.config/sublime-text-3/Packages/User/` (Linux) or `%appdata%\Sublime Text 3\Packages\User` (Windows) and you are good to go with the previous syntax file. The new path has been changed to `~/.config/sublime-text/Packages/User/` (Linux) and `%appdata%\Sublime Text\Packages\User` (Windows) for `Sublime Text 4`.
 
 ### Build System
 
@@ -150,7 +166,7 @@ Now models can be run in Sublime Text via the shortcut `Ctrl+B`.
 
 ### Windows
 
-A batch file named as `AddAssociation.bat` is provided in the archive. It associates `*.sp` and `*.supan` files with the program and copies configuration files to default folder if Sublime Text is installed.
+A batch file named as `AddAssociation.bat` is provided in the archive. It associates `*.sp` and `*.supan` files with the program and copies configuration files to default folder if Sublime Text is installed. If the package is installed via package managers, pleas manually search and execute this file.
 
 Admin privilege is required.
 
