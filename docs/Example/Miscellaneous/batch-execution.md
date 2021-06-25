@@ -10,11 +10,11 @@ Possible useful commands include: [`pwd`](../../Collection/Process/pwd.md), [`te
 
 Suppose we are structural engineers and are asked to perform a series of time history analysis to find the maximum displacement of some structure under a number of different ground motions.
 
-For simplicity, let the structure be a SDOF mass--spring system, and we want to apply all the records in the [NZ Strong Motion](../../Library/Amplitude/Special/NZStrongMotion.md) database. Please note the provided archive only contains 35 records. Please visit the corresponding page for the full database (with 700+ records).
+For simplicity, let the structure be a SDOF mass--spring system, and we want to apply all the records in the [NZ Strong Motion](../../Library/Amplitude/Special/NZStrongMotion.md) database. Please note the provided archive only contains a few records. Please visit the corresponding page for the full database (with 700+ records).
 
 ### The Model
 
-We define a template of the model and use a placeholder named as `$groundMotionRecord` to be later replaced by specific record names. The model script will look like the follows.
+We define a template of the model and use a placeholder named as `$groundMotionRecord` to be later replaced by specific record names. The analysis time is labelled as `$duration`. It can be changed for different records. The model script will look like the follows.
 
 ```
 # an example of batch processing
@@ -39,13 +39,13 @@ acceleration 2 1 1.0 1 2
 
 hdf5recorder 1 Node U1 2
 
-step dynamic 1 50
+step dynamic 1 $duration
 set ini_step_size 1E-2
 set fixed_step_size true
 
 integrator Newmark 1
 
-converger RelIncreDisp 1 1E-10 4 1
+converger AbsIncreDisp 1 1E-12 10 1
 
 analyze
 
@@ -56,38 +56,28 @@ The above model defines a SDOF structure with a period of half a second. With PG
 
 ### Folder Structure
 
-The template model file `batch-execution.supan` is placed alongside the folder `NZStrongMotion` which contains all NZ strong motion records.
+The template model file `batch-execution.supan` is placed alongside the folder `NZStrongMotion` which contains example NZ strong motion records.
 
 ```ps
 C:\BATCH-EXECUTION
 │   batch-execution.supan
 │
 └───NZStrongMotion
-        20030821_121249_BDCS
-        20030821_121249_DCDS
-        20030821_121249_DGNS
-        20030821_121249_DKHS
-        20030821_121249_FDCS
-        20030821_121249_FGPS
-        20030821_121249_HDWS
-        20030821_121249_ICCS
-        20030821_121249_JCWJ
-        20030821_121249_MANS
-        20030821_121249_MECS
-        20030821_121249_MOSS
-        20030821_121249_OAMS
-        20030821_121249_QTPS
-        20030821_121249_SKFS
-        20030821_121249_TAFS
-        20030821_121249_WNPS
-        20030930_193749_MLZ
+    20030821_121249_BDCS_N59E_A
+    20030821_121249_BDCS_S31E_A
+    20030821_121249_DCDS_N67E_A
+    20030821_121249_DCDS_S23E_A
+    20030821_121249_DGNS_S18W_A
+    20030821_121249_DGNS_S72E_A
+    20030821_121249_DKHS_N33W_A
 ```
 
 To automate the task, we want to
 
 1. loop over all strong motion records
 2. for each record, replace placeholder `$groundMotionRecord` with the proper file name to load the record
-3. perform the response history analysis
+3. replace `$duration` with proper analysis duration which can be determined by the duration of record
+4. perform the response history analysis
 
 Note the recorded displacement is stored in `*.h5` file, it may be better to store them in different folder with the name of the corresponding ground motion. This can be done in two approaches:
 
@@ -105,6 +95,7 @@ import os
 import shutil
 
 placeholder = '$groundMotionRecord'
+duration = '$duration'
 
 template_file = open("batch-execution.supan", "r")
 template_model = template_file.read()
@@ -122,6 +113,7 @@ Now loop over each record and perform the analysis.
 
 ```py
 for record in records:
+    print("Processing " + record)
     try:
         # try to create folder
         os.mkdir(record)
@@ -135,7 +127,7 @@ for record in records:
     model_file = open(record + ".sp", "w")
     # write modified script to the model file
     # remember now we are in the newly created folder, the record is stored in ..\NZStrongMotion
-    model_file.write(template_model.replace(placeholder, '..\\NZStrongMotion\\' + record))
+    model_file.write(template_model.replace(placeholder, '..\\NZStrongMotion\\' + record).replace(duration, '100'))
     # remember to close before running the model
     model_file.close()
     # now invoke suanPan to run the model
