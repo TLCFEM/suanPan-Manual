@@ -17,12 +17,12 @@ material SimpleSand (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) [14]
 # (3) double, poissons ratio
 # (4) double, m, size of yield surface
 # (5) double, A, dilatancy related parameter
-# (6) double, h, dilatancy related hardening paramater
+# (6) double, h, dilatancy related hardening parameter
 # (7) double, alpha_c, critical alpha
-# (8) double, n_b, bounding surface evolution paramater
+# (8) double, n_b, bounding surface evolution parameter
 # (9) double, n_d, dilatancy surface evolution parameter
 # (10) double, v_c, critical specific volume
-# (11) double, p_c, ciritical hydrostatic stress
+# (11) double, p_c, critical hydrostatic stress, should be negative
 # (12) double, lambda_c, the slope of critical state line
 # (13) double, v_0, initial specific volume
 # [14] double, density, default: 0.0
