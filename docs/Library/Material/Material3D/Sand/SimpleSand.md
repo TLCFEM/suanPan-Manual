@@ -38,10 +38,10 @@ $$
 \psi=v-v_c+\lambda_c\ln\left(\dfrac{p}{p_c}\right)
 $$
 
-The specific volume can be expressed in terms of trial strain,
+The specific volume can be expressed in terms of strain,
 
 $$
-v=v_0\left(1+\mathrm{tr}~\varepsilon^{tr}\right).
+v=v_0\left(1+\mathrm{tr}~\varepsilon\right).
 $$
 
 Thus, the bounding surface and dilatancy surface can be defined to evolve with $$\psi$$,
