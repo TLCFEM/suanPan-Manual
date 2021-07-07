@@ -78,7 +78,7 @@ where $$n=\dfrac{s+p\alpha}{|s+p\alpha|}$$ is a unit tensor, $$I$$ is the second
 The evolution of $$\alpha$$ is similar to the Armstrong-Frederick hardening law.
 
 $$
-\Delta\alpha=\Delta\gamma{}\left(\alpha^bn-h\alpha\right),
+\Delta\alpha=\Delta\gamma{}h\left(\alpha^bn-\alpha\right),
 $$
 
 where $$h$$ is a constant that controls the speed of hardening.
