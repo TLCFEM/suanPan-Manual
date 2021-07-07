@@ -6,7 +6,7 @@ The continuum mechanics based sign convention (tension is positive) is used for 
 
 The `SimpleSand` model is a simple sand hardening model that adopts a bounding surface concept.
 
-The detailed derivations can be found in [this](SimpleSand.pdf) document.
+The detailed derivations can be found in [this](SimpleSand.pdf) document. **The algorithm is correct but the theory needs validation. Your collaboration would be much appreciated.**
 
 ## Syntax
 
