@@ -82,3 +82,7 @@ $$
 $$
 
 where $$h$$ is a constant that controls the speed of hardening.
+
+## Example
+
+Please refer to [triaxial-compression-of-sand](../../../../Example/Geotechnical/triaxial-compression-of-sand.md).

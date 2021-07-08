@@ -16,6 +16,7 @@
   * [element template](Example/Developer/element-template.md)
   * [material template](Example/Developer/material-template.md)
 * Geotechnical
+  * [triaxial compression of sand](Example/Geotechnical/triaxial-compression-of-sand.md)
 * Structural
   * Statics
     * [bifurcation of a cantilever beam](Example/Structural/Statics/bifurcation-of-a-cantilever-beam.md)
@@ -43,8 +44,8 @@
     * [evolutionary structural optimization](Example/Structural/Optimization/evolutionary-structural-optimization.md)
   * Isogeometric Analysis
     * [linear analysis of a single element](Example/Structural/IGA/linear-analysis-of-a-single-element.md)
-  * Miscellaneous
-    * [batch execution for automation](Example/Miscellaneous/batch-execution.md)
+* Miscellaneous
+  * [batch execution for automation](Example/Miscellaneous/batch-execution.md)
 
 ## Collection
 
