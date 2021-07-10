@@ -304,6 +304,7 @@
       * [NonlinearHoffman](Library/Material/Material3D/Hoffman/NonlinearHoffman.md)
     * Sand
       * [SimpleSand](Library/Material/Material3D/Sand/SimpleSand.md)
+      * [DafalisaMazanri](Library/Material/Material3D/Sand/DafaliasMazanri.md)
     * vonMises
       * [ArmstrongFrederick](Library/Material/Material3D/vonMises/ArmstrongFrederick.md)
       * [BilinearJ2](Library/Material/Material3D/vonMises/BilinearJ2.md)
