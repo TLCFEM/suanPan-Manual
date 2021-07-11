@@ -8,12 +8,12 @@ The modifications can be summaries as follows.
 1. The continuum mechanics convention (tension positive) is used. All volumetric strain and hydrostatic stress related quantities shall flip their signs.
 2. The Lode angle dependency is removed, which is equivalent to set $$c=1$$ in Eq. (19).
 3. Constants such as $$2/3$$ and $$\sqrt{2/3}$$ are removed. They can be combined with the model parameters.
-4. The hardening related parameter $$h$$ as defined in Eq. (24) causes numerical issues under small cyclic loads. Hence, it is changed to $$h=b_0$$.
+4. The hardening related parameter $$h$$ as defined in Eq. (24) causes numerical issues under small cyclic loads. Hence, it is changed to a similar form.
 
 ## Syntax
 
 ```
-material DafaliasMazanri (1) (2-17) [18]
+material DafaliasMazanri (1) (2-18) [19]
 (1) int, unique material tag
 (2) double, reference shear modulus G_0 ==> 125
 (3) double, poissons ratio \nu
@@ -23,15 +23,16 @@ material DafaliasMazanri (1) (2-17) [18]
 (7) double, exponent \xi ==> 0.7
 (8) double, initial yield surface size m ==> 0.01
 (9) double, hardening constant h_0
-(10) double, hardening constant c_h ==> 0.9
-(11) double, n^b ==> 1.1
-(12) double, dilatancy constant A_0 ==> 0.7
-(13) double, n^d ==> 3.5
-(14) double, z_{max} ==> 4
-(15) double, c_z ==> 600
-(16) double, atmospheric pressure p_{at} ==> -130
-(17) double, threshold G_r ==> 0.1
-[18] double, density, default: 0.0
+(10) double, hardening constant h_1 ==> 0.1
+(11) double, hardening constant c_h ==> 0.9
+(12) double, n^b ==> 1.1
+(13) double, dilatancy constant A_0 ==> 0.7
+(14) double, n^d ==> 3.5
+(15) double, z_{max} ==> 4
+(16) double, c_z ==> 600
+(17) double, atmospheric pressure p_{at} ==> -130
+(18) double, threshold G_r ==> 0.1
+[19] double, density, default: 0.0
 ```
 
 ## Theory
@@ -116,12 +117,14 @@ $$
 $$
 where $h$ controls the hardening rate,
 $$
-h=b_0.
+h=b_0\exp\left(h_1\left(\mathbf{\alpha}_{in}-\mathbf{\alpha}\right):\mathbf{n}\right).
 $$
 The parameter $b_0$ is defined as a function of current state,
 $$
 b_0=G_0h_0\left(1-c_he\right)\sqrt{\dfrac{p_{at}}{p}}.
 $$
+
+$\mathbf{\alpha}_{in}$ is updated whenever load reversal occurs.
 
 ### Fabric Effect
 The fabric tensor changes when $\Delta\varepsilon^p_v$ is positive,
