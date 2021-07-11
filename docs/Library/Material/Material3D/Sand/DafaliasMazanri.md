@@ -129,5 +129,5 @@ $\mathbf{\alpha}_{in}$ is updated whenever load reversal occurs.
 ### Fabric Effect
 The fabric tensor changes when $\Delta\varepsilon^p_v$ is positive,
 $$
-\Delta\mathbf{z}=-c_z\left\langle\Delta\varepsilon^p_v\right\rangle\left(z_m\mathbf{n}+\mathbf{z}\right).
+\Delta\mathbf{z}=c_z\left\langle\Delta\varepsilon^p_v\right\rangle\left(z_m\mathbf{n}-\mathbf{z}\right).
 $$
