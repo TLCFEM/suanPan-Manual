@@ -10,6 +10,8 @@ The modifications can be summaries as follows.
 3. Constants such as $$2/3$$ and $$\sqrt{2/3}$$ are removed. They can be combined with the model parameters.
 4. The hardening related parameter $$h$$ as defined in Eq. (24) causes numerical issues under small cyclic loads. Hence, it is changed to a similar form.
 
+ **The algorithm is correct but the theory needs validation. Your collaboration would be much appreciated.**
+
 ## Syntax
 
 ```
