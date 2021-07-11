@@ -107,7 +107,7 @@ $$
 $$
 where $D$ is the dilatancy parameter.
 $$
-D=A_d\left(\alpha_d-m-\mathbf{\alpha}:\mathbf{n}\right)=A_0\left(1+\left\langle\mathbf{z}:\mathbf{n}\right\rangle\right)\left(\alpha_d-m-\mathbf{\alpha}:\mathbf{n}\right).
+D=A_d\left(\alpha^d-m-\mathbf{\alpha}:\mathbf{n}\right)=A_0\left(1+\left\langle\mathbf{z}:\mathbf{n}\right\rangle\right)\left(\alpha_d-m-\mathbf{\alpha}:\mathbf{n}\right).
 $$
 
 ### Hardening Rule
