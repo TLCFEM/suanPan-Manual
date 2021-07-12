@@ -24,7 +24,7 @@ element C3D8 1 1 2 3 4 5 6 7 8 1 G
 For the material properties, the following values are used.
 
 ```
-material SimpleSand 1 9E4 .2 .01 .7 5. 1.25 1.1 3.5 1.915 -130. .02 2.
+material SimpleSand 1 9E4 .2 .01 -.7 5. 1.25 1.1 3.5 1.9 -130. .02 2.
 ```
 
 Please refer to the corresponding page for explanations.

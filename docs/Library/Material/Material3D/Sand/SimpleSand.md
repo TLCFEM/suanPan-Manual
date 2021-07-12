@@ -6,7 +6,7 @@ The continuum mechanics based sign convention (tension is positive) is used for 
 
 The `SimpleSand` model is a simple sand hardening model that adopts a bounding surface concept.
 
-The detailed derivations can be found in [this](SimpleSand.pdf) document. **The algorithm is correct but the theory needs validation. Your collaboration would be much appreciated.**
+The detailed derivations can be found in [this](SimpleSand.pdf) document.
 
 ## Syntax
 
@@ -16,7 +16,7 @@ material SimpleSand (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) [14]
 # (2) double, elastic modulus
 # (3) double, poissons ratio
 # (4) double, m, size of yield surface
-# (5) double, A, dilatancy related parameter
+# (5) double, A, dilatancy related parameter, often negative
 # (6) double, h, dilatancy related hardening parameter
 # (7) double, alpha_c, critical alpha
 # (8) double, n_b, bounding surface evolution parameter
@@ -72,6 +72,8 @@ $$
 $$
 
 where $$n=\dfrac{s+p\alpha}{|s+p\alpha|}$$ is a unit tensor, $$I$$ is the second order unit tensor and $$D=A\left(\alpha^d-\alpha:n\right)$$ is the dilatancy parameter.
+
+Note due to the change of sign convention, a negative $A$ leads to contractive response.
 
 ### Hardening Rule
 
