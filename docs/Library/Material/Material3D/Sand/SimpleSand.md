@@ -73,7 +73,7 @@ $$
 
 where $$n=\dfrac{s+p\alpha}{|s+p\alpha|}$$ is a unit tensor, $$I$$ is the second order unit tensor and $$D=A\left(\alpha^d-\alpha:n\right)$$ is the dilatancy parameter.
 
-Note due to the change of sign convention, a negative $A$ leads to contractive response.
+Note due to the change of sign convention, a negative $$D$$ leads to contractive response, thus $$A$$ often needs to be negative.
 
 ### Hardening Rule
 

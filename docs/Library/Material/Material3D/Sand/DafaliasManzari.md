@@ -28,7 +28,7 @@ material DafaliasMazanri (1) (2-18) [19]
 (10) double, hardening constant h_1 ==> 0.1
 (11) double, hardening constant c_h ==> 0.9
 (12) double, n^b ==> 1.1
-(13) double, dilatancy constant A_0 ==> 0.7
+(13) double, dilatancy constant A_0 ==> -0.7
 (14) double, n^d ==> 3.5
 (15) double, z_{max} ==> 4
 (16) double, c_z ==> 600
@@ -111,6 +111,8 @@ where $D$ is the dilatancy parameter.
 $$
 D=A_d\left(\alpha^d-m-\mathbf{\alpha}:\mathbf{n}\right)=A_0\left(1+\left\langle\mathbf{z}:\mathbf{n}\right\rangle\right)\left(\alpha_d-m-\mathbf{\alpha}:\mathbf{n}\right).
 $$
+
+Due to the change of sign convention, a negative $$D$$ gives contractive response, thus $$A_0$$ often needs to be negative.
 
 ### Hardening Rule
 The evolution rate of the back stress ratio $\mathbf{\alpha}$ is defined in terms of a proper distance measure from the bounding surface,
