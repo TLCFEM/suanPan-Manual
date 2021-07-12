@@ -1,4 +1,4 @@
-# DafaliasMazanri
+# DafaliasManzari
 
 The modified Dafalias--Manzari sand model.
 
