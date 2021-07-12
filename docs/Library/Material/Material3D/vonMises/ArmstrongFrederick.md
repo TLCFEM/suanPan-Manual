@@ -10,7 +10,7 @@ Armstrong-Frederick Steel Model
 
 ## Theory
 
-Implementation can be found in a separated [document](ArmstrongFrederick.pdf).
+Implementation can be found in a separate [document](ArmstrongFrederick.pdf).
 
 A von Mises type yield function is used. The associated plasticity is assumed. Both isotropic and kinematic hardening rules are employed.
 
