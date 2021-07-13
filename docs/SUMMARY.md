@@ -274,10 +274,10 @@
     * [Rebar2D](Library/Material/Material2D/Rebar2D.md)
   * Material3D
     * CamClay
-      * [BilinearCC](Library/Material/Material3D/CamClay/BilinearCC.md)
-      * [ExpCC](Library/Material/Material3D/CamClay/ExpCC.md)
-      * [NonlinearCamClay](Library/Material/Material3D/CamClay/NonlinearCamClay.md)
-      * [ParabolicCC](Library/Material/Material3D/CamClay/ParabolicCC.md)
+      * [BilinearCC](Library/Material/Material3D/Clay/CamClay/BilinearCC.md)
+      * [ExpCC](Library/Material/Material3D/Clay/CamClay/ExpCC.md)
+      * [NonlinearCamClay](Library/Material/Material3D/Clay/CamClay/NonlinearCamClay.md)
+      * [ParabolicCC](Library/Material/Material3D/Clay/CamClay/ParabolicCC.md)
     * Concrete
       * [CDP](Library/Material/Material3D/Concrete/CDP.md)
       * [Rebar3D](Library/Material/Material3D/Concrete/Rebar3D.md)

@@ -2,9 +2,10 @@
 
 The modified Dafalias--Manzari sand model.
 
-The original model [10.1061/(ASCE)0733-9399(2004)130:6(622)](https://doi.org/10.1061/(ASCE)0733-9399(2004)130:6(622)) is modified slightly. The implementation details can be seen in [this](DafaliasMazanri.pdf) file.
+The original model [10.1061/(ASCE)0733-9399(2004)130:6(622)](https://doi.org/10.1061/(ASCE)0733-9399(2004)130:6(622)) is modified slightly. The implementation details can be seen in [this](DafaliasManzari.pdf) file.
 
 The modifications can be summaries as follows.
+
 1. The continuum mechanics convention (tension positive) is used. All volumetric strain and hydrostatic stress related quantities shall flip their signs.
 2. The Lode angle dependency is removed, which is equivalent to set $$c=1$$ in Eq. (19).
 3. Constants such as $$2/3$$ and $$\sqrt{2/3}$$ are removed. They can be combined with the model parameters.
