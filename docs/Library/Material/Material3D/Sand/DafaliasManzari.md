@@ -42,6 +42,7 @@ material DafaliasMazanri (1) (2-18) [19]
 
 ### Hyperelasticity
 The hyperelastic response is defined as
+
 $$
 G=G_0\dfrac{\left(2.97-e\right)^2}{1+e}\sqrt{pp_{at}},\qquad
 K=\dfrac{2}{3}\dfrac{1+\nu}{1-2\nu}G.
@@ -50,65 +51,81 @@ $$
 To improve numerical stability, $$G$$ is bounded by $$G_rG_0|p_{at}|$$ where $$G_r$$ is a constant can be chosen as for example $$0.1$$. This is equivalent to define an elastic response for $$|p|<0.01|p_{at}$$.
 
 The void ratio can be associated to strain so that
+
 $$
 e=e_0+\left(1+e_0\right)\mathrm{tr~}{\varepsilon^{tr}}.
 $$
 
 The strain increment can be decomposed into elastic and plastic parts.
+
 $$
 \mathbf{\varepsilon}^{tr}=\mathbf{\varepsilon}_n+\Delta\mathbf{\varepsilon}=\mathbf{\varepsilon}_n+\Delta\mathbf{\varepsilon}^{e}+\Delta\mathbf{\varepsilon}^{p}.
 $$
+
 As such, the stress increment can be expressed accordingly,
+
 $$
 \mathbf{\sigma}=\mathbf{\sigma}_n+\Delta\mathbf{\sigma}=\mathbf{\sigma}_n+2G\left(\Delta{}\mathbf{e}-\Delta{}\mathbf{e}^{p}\right)+K\left(\Delta\varepsilon_v-\Delta\varepsilon_v^p\right)\mathbf{I}.
 $$
 
 In derivatoric and spherical components,
+
 $$
 \mathbf{\sigma}=\mathbf{s}+p\mathbf{I},\\
 p=p_n+K\left(\Delta\varepsilon_v-\Delta\varepsilon_v^p\right),\\
 \mathbf{s}=\mathbf{s}_n+2G\left(\Delta{}\mathbf{e}-\Delta{}\mathbf{e}^{p}\right),
 $$
+
 with
+
 $$
 \Delta\mathbf{\varepsilon}=\Delta{}\mathbf{e}+\dfrac{1}{3}\Delta\varepsilon_v\mathbf{I},
 $$
-where $\mathbf{s}=\mathrm{dev~}{\mathbf{\sigma}}$ is the deviatoric stress, $p=\dfrac{1}{3}\mathrm{tr~}{\mathbf{\sigma}}$ is the hydrostatic stress.
+
+where $$\mathbf{s}=\mathrm{dev~}{\mathbf{\sigma}}$$ is the deviatoric stress, $$p=\dfrac{1}{3}\mathrm{tr~}{\mathbf{\sigma}}$$ is the hydrostatic stress.
 
 ### Critical State
 The critical state parameter is chosen as
+
 $$
 \psi=e-e_0+\lambda_c\left(\dfrac{p}{p_{at}}\right)^\xi.
 $$
 
 The dilatancy surface is defined as
+
 $$
 \alpha^d=\alpha^c\exp\left(n^d\psi\right).
 $$
 
 The bounding surface is defined as
+
 $$
 \alpha^b=\alpha^c\exp\left(-n^b\psi\right).
 $$
 
 ### Yield Function
 A wedge-like function is chosen to be the yield surface.
+
 $$
 F=\big|\mathbf{s}+p\mathbf{\alpha}\big|+mp=\big|\mathbf{\eta}\big|+mp,
 $$
-where $\alpha$ is the so called back stress ratio and $m$ characterises the size of the wedge. For simplicity, $m$ is assumed to be a constant in this model.
+where $$\alpha$$ is the so called back stress ratio and $$m$$ characterises the size of the wedge. For simplicity, $$m$$ is assumed to be a constant in this model.
 
-By denoting $\mathbf{\eta}=\mathbf{s}+p\mathbf{\alpha}$, the directional unit tensor is defined as
+By denoting $$\mathbf{\eta}=\mathbf{s}+p\mathbf{\alpha}$$, the directional unit tensor is defined as
+
 $$
 \mathbf{n}=\dfrac{\mathbf{\eta}}{\big|\mathbf{\eta}\big|}.
 $$
 
 ### Flow Rule
 A non-associated plastic flow is used, the corresponding flow rule is defined as follows.
+
 $$
 \Delta\mathbf{\varepsilon}^p=\gamma\left(\mathbf{n}+\dfrac{1}{3}D\mathbf{I}\right),
 $$
-where $D$ is the dilatancy parameter.
+
+where $$D$$ is the dilatancy parameter.
+
 $$
 D=A_d\left(\alpha^d-m-\mathbf{\alpha}:\mathbf{n}\right)=A_0\left(1+\left\langle\mathbf{z}:\mathbf{n}\right\rangle\right)\left(\alpha_d-m-\mathbf{\alpha}:\mathbf{n}\right).
 $$
@@ -116,23 +133,30 @@ $$
 Due to the change of sign convention, a negative $$D$$ gives contractive response, thus $$A_0$$ often needs to be negative.
 
 ### Hardening Rule
-The evolution rate of the back stress ratio $\mathbf{\alpha}$ is defined in terms of a proper distance measure from the bounding surface,
+The evolution rate of the back stress ratio $$\mathbf{\alpha}$$ is defined in terms of a proper distance measure from the bounding surface,
+
 $$
 \Delta\mathbf{\alpha}=\gamma{}h\left(\left(\alpha^b-m\right)\mathbf{n}-\mathbf{\alpha}\right),
 $$
-where $h$ controls the hardening rate,
+
+where $$h$$ controls the hardening rate,
+
 $$
 h=b_0\exp\left(h_1\left(\mathbf{\alpha}_{in}-\mathbf{\alpha}\right):\mathbf{n}\right).
 $$
-The parameter $b_0$ is defined as a function of current state,
+
+The parameter $$b_0$$ is defined as a function of current state,
+
 $$
 b_0=G_0h_0\left(1-c_he\right)\sqrt{\dfrac{p_{at}}{p}}.
 $$
 
-$\mathbf{\alpha}_{in}$ is updated whenever load reversal occurs.
+$$\mathbf{\alpha}_{in}$$ is updated whenever load reversal occurs.
 
 ### Fabric Effect
-The fabric tensor changes when $\Delta\varepsilon^p_v$ is positive,
+
+The fabric tensor changes when $$\Delta\varepsilon^p_v$$ is positive,
+
 $$
 \Delta\mathbf{z}=c_z\left\langle\Delta\varepsilon^p_v\right\rangle\left(z_m\mathbf{n}-\mathbf{z}\right).
 $$
