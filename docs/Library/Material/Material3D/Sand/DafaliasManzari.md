@@ -48,7 +48,7 @@ G=G_0\dfrac{\left(2.97-e\right)^2}{1+e}\sqrt{pp_{at}},\qquad
 K=\dfrac{2}{3}\dfrac{1+\nu}{1-2\nu}G.
 $$
 
-To improve numerical stability, $$G$$ is bounded by $$G_rG_0|p_{at}|$$ where $$G_r$$ is a constant can be chosen as for example $$0.1$$. This is equivalent to define an elastic response for $$|p|<0.01|p_{at}$$.
+To improve numerical stability, $$G$$ is bounded by $$G_rG_0|p_{at}|$$ where $$G_r$$ is a constant can be chosen as for example $$0.1$$. This is equivalent to define an elastic response for $$|p|<0.01|p_{at}|$$.
 
 The void ratio can be associated to strain so that
 
@@ -109,6 +109,7 @@ A wedge-like function is chosen to be the yield surface.
 $$
 F=\big|\mathbf{s}+p\mathbf{\alpha}\big|+mp=\big|\mathbf{\eta}\big|+mp,
 $$
+
 where $$\alpha$$ is the so called back stress ratio and $$m$$ characterises the size of the wedge. For simplicity, $$m$$ is assumed to be a constant in this model.
 
 By denoting $$\mathbf{\eta}=\mathbf{s}+p\mathbf{\alpha}$$, the directional unit tensor is defined as
