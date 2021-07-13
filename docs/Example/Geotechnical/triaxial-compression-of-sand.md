@@ -24,28 +24,41 @@ element C3D8 1 1 2 3 4 5 6 7 8 1 G
 For the material properties, the following values are used.
 
 ```
-material SimpleSand 1 9E4 .2 .01 -.7 5. 1.25 1.1 3.5 1.9 -130. .02 2.
+material SimpleSand 1 9E4 .2 .01 -.7 5. 1.25 1.1 3.5 1.6 -130. .02 2.
 ```
 
 Please refer to the corresponding page for explanations.
 
 ## Loading
 
-The confinement is applied to achieve a confinement stress of $$\sigma=1500~\mathrm{kPa}$$.
+The confinement is applied to achieve a confinement stress of $$\sigma=3000~\mathrm{kPa}$$.
 
 In this case, a displacement of $$-0.01$$ would do the job.
 
 ```
-displacement 1 0 -0.01 1 1 2 5 6
-displacement 2 0 -0.01 2 2 3 6 7
+displacement 1 0 -0.02 1 1 2 5 6
+displacement 2 0 -0.02 2 2 3 6 7
 ```
 
-The vertical displacement is applied in the same way. It varies cyclicly after the target confinement is achieved.
+The vertical displacement is applied in the same way.
+
+### Monotonic
 
 ```
-amplitude Tabular 1 v
+amplitude Tabular 1 monotonic
 
-displacement 3 1 -0.01 3 5 6 7 8
+displacement 3 1 -0.02 3 5 6 7 8
+
+```
+
+### Cyclic
+
+Cyclic displacement load can be applied. It varies cyclicly after the target confinement is achieved.
+
+```
+amplitude Tabular 1 cyclic
+
+displacement 3 1 -0.02 3 5 6 7 8
 ```
 
 The load level can be plotted as follows.
@@ -58,6 +71,8 @@ The $$p$$-$$q$$ response is shown as follows. As a linear relationship is assume
 
 The `SimpleSand` model is a very simple model for sand to showcase the concept of bounding surface.
 
-![result](triaxial-compression-of-sand.svg)
+![monotonic result](triaxial-compression-of-sand-monotonic.svg)
+
+![cyclic result](triaxial-compression-of-sand-cyclic.svg)
 
 For more advanced response, other models shall be used.

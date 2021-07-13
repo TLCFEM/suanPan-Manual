@@ -216,22 +216,22 @@
 	<path stroke='black'  d='M72.53,18.01 L72.53,242.40 L724.82,242.40 L724.82,18.01 L72.53,18.01 Z  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(19.18,130.21) rotate(270)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >load level</tspan></text>
+		<text><tspan font-family="Arial" >output</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(398.67,291.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" >time</tspan></text>
+		<text><tspan font-family="Arial" >input</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
-	<g id="gnuplot_plot_1" ><title>"v" u 1:2</title>
+	<g id="gnuplot_plot_1" ><title>"cyclic" u 1:2</title>
 <g fill="none" color="white" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(148,   0, 211)'  d='M72.53,242.40 L137.76,55.41 L202.99,18.01 L268.22,92.81 L333.45,18.01 L398.68,92.81 L463.90,18.01 L529.13,92.81
-		L594.36,18.01 L659.59,92.81 L724.82,18.01  '/></g>
+	<path stroke='rgb(148,   0, 211)'  d='M72.53,242.40 L137.76,55.41 L202.99,36.71 L268.22,74.11 L333.45,36.71 L398.68,74.11 L463.90,36.71 L529.13,74.11
+		L594.36,36.71 L659.59,74.11 L724.82,36.71  '/></g>
 	</g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
